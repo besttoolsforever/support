@@ -1,477 +1,641 @@
-<!DOCTYPE html><html lang="en"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary-fixed": "#dde2f2",
-              "error-container": "#ffdad6",
-              "surface-container": "#edeeef",
-              "inverse-surface": "#2e3132",
-              "primary": "#070d17",
-              "inverse-primary": "#c1c6d5",
-              "on-tertiary-fixed-variant": "#5c4300",
-              "surface-container-low": "#f3f4f5",
-              "on-primary-container": "#848a98",
-              "on-tertiary-container": "#af8300",
-              "error": "#ba1a1a",
-              "surface-variant": "#e1e3e4",
-              "tertiary-container": "#2e2000",
-              "tertiary-fixed": "#ffdfa0",
-              "surface-container-highest": "#e1e3e4",
-              "surface": "#f8f9fa",
-              "on-secondary": "#ffffff",
-              "secondary-container": "#6faeff",
-              "background": "#f8f9fa",
-              "surface-tint": "#595e6b",
-              "on-secondary-fixed-variant": "#004883",
-              "secondary": "#0360ab",
-              "on-tertiary-fixed": "#261a00",
-              "surface-bright": "#f8f9fa",
-              "on-secondary-container": "#004077",
-              "tertiary": "#130b00",
-              "on-background": "#191c1d",
-              "on-error-container": "#93000a",
-              "primary-fixed-dim": "#c1c6d5",
-              "on-primary-fixed-variant": "#414753",
-              "on-primary-fixed": "#161c26",
-              "on-secondary-fixed": "#001c39",
-              "surface-dim": "#d9dadb",
-              "secondary-fixed-dim": "#a4c9ff",
-              "inverse-on-surface": "#f0f1f2",
-              "on-surface": "#191c1d",
-              "secondary-fixed": "#d4e3ff",
-              "outline-variant": "#c6c6cc",
-              "tertiary-fixed-dim": "#f8bd2a",
-              "on-primary": "#ffffff",
-              "primary-container": "#1d232e",
-              "on-surface-variant": "#45474c",
-              "on-tertiary": "#ffffff",
-              "outline": "#76777c"
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#dde2f2",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#edeeef",
+                        "inverse-surface": "#2e3132",
+                        "primary": "#070d17",
+                        "inverse-primary": "#c1c6d5",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-container": "#848a98",
+                        "on-tertiary-container": "#af8300",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary-container": "#2e2000",
+                        "tertiary-fixed": "#ffdfa0",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface": "#f8f9fa",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#6faeff",
+                        "background": "#f8f9fa",
+                        "surface-tint": "#595e6b",
+                        "on-secondary-fixed-variant": "#004883",
+                        "secondary": "#0360ab",
+                        "on-tertiary-fixed": "#261a00",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-container": "#004077",
+                        "tertiary": "#130b00",
+                        "on-background": "#191c1d",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c1c6d5",
+                        "on-primary-fixed-variant": "#414753",
+                        "on-primary-fixed": "#161c26",
+                        "on-secondary-fixed": "#001c39",
+                        "surface-dim": "#d9dadb",
+                        "secondary-fixed-dim": "#a4c9ff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-surface": "#191c1d",
+                        "secondary-fixed": "#d4e3ff",
+                        "outline-variant": "#c6c6cc",
+                        "tertiary-fixed-dim": "#f8bd2a",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1d232e",
+                        "on-surface-variant": "#45474c",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#76777c"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
             },
-            fontFamily: {
-              "headline": ["Manrope"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
-          },
-        },
-      }
-    </script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      .glass-nav {
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-      }
-      .asymmetric-grid {
-        display: grid;
-        grid-template-columns: 1.5fr 1fr;
-      }
-      @media (max-width: 768px) {
-        .asymmetric-grid {
-          grid-template-columns: 1fr;
         }
-      }
-      .animate-bounce-slow {
-        animation: bounce 3s infinite;
-      }
-      @keyframes bounce {
-        0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8,0,1,1); }
-        50% { transform: none; animation-timing-function: cubic-bezier(0,0,0.2,1); }
-      }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .asymmetric-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+        }
+
+        @media (max-width: 768px) {
+            .asymmetric-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .animate-bounce-slow {
+            animation: bounce 3s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(-5%);
+                animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+            }
+
+            50% {
+                transform: none;
+                animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+            }
+        }
     </style>
 </head>
+
 <body class="bg-background text-on-surface font-body selection:bg-tertiary-fixed-dim selection:text-on-tertiary-fixed">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-[0px_12px_32px_rgba(7,13,23,0.06)]">
-<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto font-['Manrope'] tracking-tight">
-<div class="flex items-center gap-8">
-<a class="text-xl font-bold text-[#070d17] flex items-center gap-2" href="index.html">
-<img alt="BestToolsForever Logo" class="h-8 w-auto" src="assets/images/logo_BestToolsForever.svg">
-<span data-i18n="home.title_short">BestToolsForever</span>
-</a>
-<div class="hidden md:flex gap-6 items-center">
-<a class="text-secondary border-b-2 border-secondary pb-1 font-semibold" href="index.html" data-i18n="shared.nav.home">Home</a>
-<a class="text-[#1d232e]/70 hover:text-secondary transition-colors duration-300 font-semibold" href="#products" data-i18n="shared.nav.products">Products</a>
-<a class="text-[#1d232e]/70 hover:text-secondary transition-colors duration-300 font-semibold" href="#support" data-i18n="shared.nav.support">Support</a>
-<a class="text-[#1d232e]/70 hover:text-secondary transition-colors duration-300 font-semibold" href="legal.html" data-i18n="shared.nav.legal">Legal</a>
-</div>
-</div>
-<div class="flex items-center gap-4 relative">
-<button id="lang-selector" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-variant transition-colors text-xs font-semibold tracking-wider border border-outline-variant/15">
-<span class="material-symbols-outlined text-sm">language</span>
-<span id="current-lang">EN-US</span>
-<span class="material-symbols-outlined text-xs">expand_more</span>
-</button>
-<div id="lang-dropdown" class="absolute top-full right-0 mt-3 w-64 md:w-52 max-h-[70vh] md:max-h-[420px] overflow-y-auto bg-white rounded-2xl shadow-[0px_24px_64px_-12px_rgba(7,13,23,0.18)] border border-outline-variant/10 hidden flex-col py-2 z-[100]">
-</div>
-</div>
-</div>
-</nav>
-<main class="pt-24">
-<!-- Hero Section -->
-<section class="max-w-7xl mx-auto px-8 py-20 md:py-32">
-<div class="asymmetric-grid gap-16 items-center">
-<div class="space-y-8">
-<div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary-container/10 text-secondary text-sm font-semibold tracking-wide" data-i18n="home.hero.label">
-INDIE SOFTWARE STUDIO
-</div>
-<h1 class="text-6xl md:text-8xl font-headline font-extrabold text-primary leading-[0.9] tracking-tighter" data-i18n="home.hero.title">
-Crafting Nice<br><span class="text-secondary">Apps.</span>
-</h1>
-<p class="text-xl text-on-surface-variant max-w-xl leading-relaxed" data-i18n="home.hero.subtitle">
-An independent software studio. We build tools that prioritize utility, precision, and the editorial feel of high-end software.
-</p>
-<div class="flex flex-wrap gap-4 pt-4">
-<a class="px-8 py-4 bg-primary text-on-primary rounded-xl font-semibold shadow-[0px_12px_32px_rgba(7,13,23,0.1)] hover:scale-95 transition-transform active:scale-90 flex items-center gap-2" href="#products">
-<span data-i18n="home.hero.cta_explore">Explore</span><span class="material-symbols-outlined">arrow_forward</span>
-</a>
-<a class="px-8 py-4 bg-surface-container-highest text-secondary rounded-xl font-semibold hover:opacity-100 transition-opacity" href="#support" data-i18n="home.hero.cta_support">
-Support Studio
-</a>
-</div>
-</div>
-<div class="hidden md:block relative">
-<div class="aspect-square bg-surface-container-low rounded-[2.5rem] overflow-hidden rotate-3 flex items-center justify-center p-12">
-<img alt="Studio Brand Mark" class="w-full h-full object-contain -rotate-3 opacity-90" src="https://lh3.googleusercontent.com/aida/ADBb0ugtUH1HYpnaly_KsGIfbWTj_upTpPT426XtyXSNZ21Rm1JD4a-gD9N6yQAvCchJ6qvxlbYUh4yuCmjDFJ15ofcrEPXV2w3ES8bvvhq46nrrjoyyqjBaKTxoRkUKaP78T3ELN1No-b1lGlxErHlc5UlvKBWqkiE0OFCJ-KIhUWhfY4FeD9urhDajQdA8ppuJHd2vucGradvpP_n9TirMnoSyHF0uJZLOEHaMZXPICP4JwC6tuAvPPQPLRtfDbGKs2_Yrm97UyRdSRA" style="">
-</div>
-<div class="absolute -bottom-8 -left-8 bg-tertiary-fixed-dim p-6 rounded-2xl shadow-xl flex items-center gap-4 border-4 border-surface animate-bounce-slow">
-<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: &quot;FILL&quot; 1;">verified</span>
-<div>
-<p class="text-[10px] uppercase tracking-widest font-bold text-primary/60" data-i18n="home.hero.lead_dev_label">Development Lead</p>
-<p class="font-headline font-bold text-primary" data-i18n="home.hero.lead_dev_name">Luiz E. L. Junior</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Projects: Bento Grid -->
-<section class="bg-surface-container-low py-24" id="products">
-<div class="max-w-7xl mx-auto px-8">
-<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-<div class="space-y-2">
-<h2 class="text-4xl font-headline font-extrabold text-primary tracking-tight" data-i18n="home.archive.title">The Archive</h2>
-<p class="text-on-surface-variant" data-i18n="home.archive.subtitle">A curated list of our current utility suite.</p>
-</div>
-<div class="flex gap-2">
-<span class="w-12 h-1 bg-tertiary-fixed-dim rounded-full"></span>
-<span class="w-4 h-1 bg-outline-variant/30 rounded-full"></span>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-<!-- Flagship: BundleWeave PRO -->
-<div class="md:col-span-8 bg-surface-container-lowest rounded-[2.5rem] p-10 md:p-12 shadow-sm border border-outline-variant/10 overflow-hidden relative group transition-all duration-500 hover:shadow-xl">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
-        <div class="z-10">
-            <img alt="BundleWeave PRO Logo" class="w-24 h-24 rounded-[1.5rem] shadow-lg mb-8 transition-transform duration-500 group-hover:scale-110" src="assets/images/logo_BundleWeave.svg">
-            <div class="flex items-center gap-3 mb-6">
-                <div class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-primary text-[10px] font-bold rounded uppercase tracking-tighter" data-i18n="home.archive.items.flagship.badge">Flagship Product</div>
-                <div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-black/5 text-[10px] font-bold text-primary/60 uppercase tracking-wider">
-                    <span class="material-symbols-outlined text-[12px]">lock</span>
-                    <span data-i18n="shared.source.closed">Closed Source</span>
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-[0px_12px_32px_rgba(7,13,23,0.06)]">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto font-['Manrope'] tracking-tight">
+            <div class="flex items-center gap-8">
+                <a class="text-xl font-bold text-[#070d17] flex items-center gap-2" href="index.html">
+                    <img alt="BestToolsForever Logo" class="h-8 w-auto" src="assets/images/logo_BestToolsForever.svg">
+                    <span data-i18n="home.title_short">BestToolsForever</span>
+                </a>
+                <div class="hidden md:flex gap-6 items-center">
+                    <a class="text-secondary border-b-2 border-secondary pb-1 font-semibold" href="index.html"
+                        data-i18n="shared.nav.home">Home</a>
+                    <a class="text-[#1d232e]/70 hover:text-secondary transition-colors duration-300 font-semibold"
+                        href="#products" data-i18n="shared.nav.products">Products</a>
+                    <a class="text-[#1d232e]/70 hover:text-secondary transition-colors duration-300 font-semibold"
+                        href="#support" data-i18n="shared.nav.support">Support</a>
+                    <a class="text-[#1d232e]/70 hover:text-secondary transition-colors duration-300 font-semibold"
+                        href="legal.html" data-i18n="shared.nav.legal">Legal</a>
                 </div>
             </div>
-            <h3 class="text-4xl font-headline font-extrabold text-primary mb-4 tracking-tighter" data-i18n="home.archive.items.flagship.name">BundleWeave PRO</h3>
-            <p class="text-on-surface-variant max-w-md mb-8 leading-relaxed" data-i18n="home.archive.items.flagship.desc">
-                The definitive Windows utility for developers. Efficiently organize, weave, and export complex projects for AI context ingestion.
-            </p>
-            <div class="flex flex-wrap gap-4">
-                <a class="px-6 py-3 bg-secondary text-white rounded-lg font-bold flex items-center gap-2 hover:bg-secondary/90 transition-colors" href="https://apps.microsoft.com/detail/bsjw2w1631dg6" target="_blank" rel="noopener noreferrer">
-                    <span class="material-symbols-outlined">desktop_windows</span>
-                    <span data-i18n="home.archive.items.flagship.btn_windows">Windows v1.0</span>
+            <div class="flex items-center gap-4 relative">
+                <button id="lang-selector"
+                    class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-variant transition-colors text-xs font-semibold tracking-wider border border-outline-variant/15">
+                    <span class="material-symbols-outlined text-sm">language</span>
+                    <span id="current-lang">EN-US</span>
+                    <span class="material-symbols-outlined text-xs">expand_more</span>
+                </button>
+                <div id="lang-dropdown"
+                    class="absolute top-full right-0 mt-3 w-64 md:w-52 max-h-[70vh] md:max-h-[420px] overflow-y-auto bg-white rounded-2xl shadow-[0px_24px_64px_-12px_rgba(7,13,23,0.18)] border border-outline-variant/10 hidden flex-col py-2 z-[100]">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="pt-24">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-8 py-20 md:py-32">
+            <div class="asymmetric-grid gap-16 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-secondary-container/10 text-secondary text-sm font-semibold tracking-wide"
+                        data-i18n="home.hero.label">
+                        INDIE SOFTWARE STUDIO
+                    </div>
+                    <h1 class="text-6xl md:text-8xl font-headline font-extrabold text-primary leading-[0.9] tracking-tighter"
+                        data-i18n="home.hero.title">
+                        Crafting Nice<br><span class="text-secondary">Apps.</span>
+                    </h1>
+                    <p class="text-xl text-on-surface-variant max-w-xl leading-relaxed" data-i18n="home.hero.subtitle">
+                        An independent software studio. We build tools that prioritize utility, precision, and the
+                        editorial feel of high-end software.
+                    </p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <a class="px-8 py-4 bg-primary text-on-primary rounded-xl font-semibold shadow-[0px_12px_32px_rgba(7,13,23,0.1)] hover:scale-95 transition-transform active:scale-90 flex items-center gap-2"
+                            href="#products">
+                            <span data-i18n="home.hero.cta_explore">Explore</span><span
+                                class="material-symbols-outlined">arrow_forward</span>
+                        </a>
+                        <a class="px-8 py-4 bg-surface-container-highest text-secondary rounded-xl font-semibold hover:opacity-100 transition-opacity"
+                            href="#support" data-i18n="home.hero.cta_support">
+                            Support Studio
+                        </a>
+                    </div>
+                </div>
+                <div class="hidden md:block relative">
+                    <div
+                        class="aspect-square bg-surface-container-low rounded-[2.5rem] overflow-hidden rotate-3 flex items-center justify-center p-12">
+                        <img alt="Studio Brand Mark" class="w-full h-full object-contain -rotate-3 opacity-90"
+                            src="assets/images/logo_BestToolsForever_Name.svg" style="">
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -left-8 bg-tertiary-fixed-dim p-6 rounded-2xl shadow-xl flex items-center gap-4 border-4 border-surface animate-bounce-slow">
+                        <span class="material-symbols-outlined text-primary text-3xl"
+                            style="font-variation-settings: &quot;FILL&quot; 1;">verified</span>
+                        <div>
+                            <p class="text-[10px] uppercase tracking-widest font-bold text-primary/60"
+                                data-i18n="home.hero.lead_dev_label">Development Lead</p>
+                            <p class="font-headline font-bold text-primary" data-i18n="home.hero.lead_dev_name">Luiz E.
+                                L. Junior</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Projects: Bento Grid -->
+        <section class="bg-surface-container-low py-24" id="products">
+            <div class="max-w-7xl mx-auto px-8">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                    <div class="space-y-2">
+                        <h2 class="text-4xl font-headline font-extrabold text-primary tracking-tight"
+                            data-i18n="home.archive.title">The Archive</h2>
+                        <p class="text-on-surface-variant" data-i18n="home.archive.subtitle">A curated list of our
+                            current utility suite.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <span class="w-12 h-1 bg-tertiary-fixed-dim rounded-full"></span>
+                        <span class="w-4 h-1 bg-outline-variant/30 rounded-full"></span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                    <!-- Flagship: BundleWeave PRO -->
+                    <div
+                        class="md:col-span-8 bg-surface-container-lowest rounded-[2.5rem] p-10 md:p-12 shadow-sm border border-outline-variant/10 overflow-hidden relative group transition-all duration-500 hover:shadow-xl">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                            <div class="z-10">
+                                <img alt="BundleWeave PRO Logo"
+                                    class="w-24 h-24 rounded-[1.5rem] shadow-lg mb-8 transition-transform duration-500 group-hover:scale-110"
+                                    src="assets/images/logo_BundleWeave.svg">
+                                <div class="flex items-center gap-3 mb-6">
+                                    <div class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-primary text-[10px] font-bold rounded uppercase tracking-tighter"
+                                        data-i18n="home.archive.items.flagship.badge">Flagship Product</div>
+                                    <div
+                                        class="inline-flex items-center gap-1 px-2 py-1 rounded bg-black/5 text-[10px] font-bold text-primary/60 uppercase tracking-wider">
+                                        <span class="material-symbols-outlined text-[12px]">lock</span>
+                                        <span data-i18n="shared.source.closed">Closed Source</span>
+                                    </div>
+                                </div>
+                                <h3 class="text-4xl font-headline font-extrabold text-primary mb-4 tracking-tighter"
+                                    data-i18n="home.archive.items.flagship.name">BundleWeave PRO</h3>
+                                <p class="text-on-surface-variant max-w-md mb-8 leading-relaxed"
+                                    data-i18n="home.archive.items.flagship.desc">
+                                    The definitive Windows utility for developers. Efficiently organize, weave, and
+                                    export complex projects for AI context ingestion.
+                                </p>
+                                <div class="flex flex-wrap gap-4">
+                                    <a class="px-6 py-3 bg-secondary text-white rounded-lg font-bold flex items-center gap-2 hover:bg-secondary/90 transition-colors"
+                                        href="https://apps.microsoft.com/detail/bsjw2w1631dg6" target="_blank"
+                                        rel="noopener noreferrer">
+                                        <span class="material-symbols-outlined">desktop_windows</span>
+                                        <span data-i18n="home.archive.items.flagship.btn_windows">Windows v1.0</span>
+                                    </a>
+                                    <a class="px-6 py-3 border border-secondary/20 text-secondary rounded-lg font-semibold hover:bg-secondary/5 transition-colors"
+                                        href="https://besttoolsforever.github.io/bundleweave/"
+                                        data-i18n="home.archive.items.flagship.btn_view">View Page</a>
+                                </div>
+                            </div>
+                            <div class="hidden lg:block relative z-10">
+                                <div
+                                    class="aspect-video bg-surface-container-low rounded-2xl border border-outline-variant/5 flex items-center justify-center overflow-hidden relative group/img">
+                                    <span
+                                        class="material-symbols-outlined text-[80px] text-primary/5 group-hover/img:scale-125 transition-transform duration-700">precision_manufacturing</span>
+                                    <div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="absolute bottom-[-10%] right-[-5%] w-1/2 h-1/2 bg-gradient-to-br from-secondary/5 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                        </div>
+                    </div>
+
+                    <!-- CipherSmith -->
+                    <div
+                        class="md:col-span-4 bg-primary text-on-primary rounded-[2rem] p-10 flex flex-col justify-between shadow-xl">
+                        <div>
+                            <div class="flex justify-between items-start mb-6">
+                                <div class="flex items-center gap-2">
+                                    <span
+                                        class="text-[10px] font-bold text-secondary-container uppercase tracking-widest px-2 py-1 border border-secondary-container/30 rounded"
+                                        data-i18n="home.archive.items.ciphersmith.status">Finished</span>
+                                    <span
+                                        class="text-[10px] font-bold text-white/50 uppercase tracking-widest px-2 py-1 bg-white/10 rounded"
+                                        data-i18n="shared.source.open">Open Source</span>
+                                </div>
+                                <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-white">lock_open</span>
+                                </div>
+                            </div>
+                            <h3 class="text-2xl font-headline font-bold mb-3"
+                                data-i18n="home.archive.items.ciphersmith.name">CipherSmith</h3>
+                            <p class="text-white/70 text-sm leading-relaxed mb-6"
+                                data-i18n="home.archive.items.ciphersmith.desc">A secure, dictionary-based password
+                                generator for humans.</p>
+                        </div>
+                        <div class="space-y-3">
+                            <a class="w-full py-3 bg-white text-primary rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-white/90 transition-colors"
+                                href="https://chromewebstore.google.com/detail/ciphersmith-password-gene/bbccnjfcpepahpfcbppgembfdfgcmdjl"
+                                target="_blank" rel="noopener noreferrer">
+                                <span class="material-symbols-outlined">extension</span>
+                                <span data-i18n="home.archive.items.ciphersmith.btn_chrome">Chrome Store</span>
+                            </a>
+                            <a class="w-full py-3 bg-white/5 text-white/90 rounded-lg font-semibold flex items-center justify-center gap-2 border border-white/10 hover:bg-white/10 transition-colors"
+                                href="https://github.com/besttoolsforever/CipherSmith" target="_blank"
+                                rel="noopener noreferrer">
+                                <span class="material-symbols-outlined">code</span>
+                                <span data-i18n="home.archive.items.ciphersmith.btn_github">GitHub</span>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Morpheus -->
+                    <div
+                        class="md:col-span-6 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between shadow-sm border border-outline-variant/10 group hover:shadow-lg transition-all">
+                        <div>
+                            <div class="flex items-center gap-2 mb-6">
+                                <div class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-primary text-[10px] font-bold rounded uppercase tracking-tighter"
+                                    data-i18n="home.archive.items.morpheus.status">Recém Iniciado</div>
+                                <div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-black/5 text-[10px] font-bold text-primary/40 uppercase tracking-wider"
+                                    data-i18n="shared.source.open">Open Source</div>
+                            </div>
+                            <h3 class="text-3xl font-headline font-extrabold text-primary mb-4 tracking-tighter"
+                                data-i18n="home.archive.items.morpheus.name">Morpheus — Multi-Agent Runtime Skin</h3>
+                            <p class="text-on-surface-variant leading-relaxed"
+                                data-i18n="home.archive.items.morpheus.desc">Modular visual observatory for multi-agent
+                                systems. Universal visual layer for agentic runtime environments (OpenClaw, etc). Still
+                                in technical feasibility process.</p>
+                        </div>
+                        <div class="mt-8">
+                            <div class="inline-flex items-center gap-2 text-secondary font-bold"
+                                data-i18n="home.archive.items.morpheus.badge">Status: Technical Feasibility</div>
+                        </div>
+                    </div>
+
+                    <!-- GarthHolo -->
+                    <div
+                        class="md:col-span-6 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between shadow-sm border border-outline-variant/10 group hover:shadow-lg transition-all">
+                        <div>
+                            <div class="flex items-center gap-2 mb-6">
+                                <div class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-primary text-[10px] font-bold rounded uppercase tracking-tighter"
+                                    data-i18n="home.archive.items.garth.status">Beta</div>
+                                <div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-black/5 text-[10px] font-bold text-primary/40 uppercase tracking-wider"
+                                    data-i18n="shared.source.closed">Closed Source</div>
+                            </div>
+                            <h3 class="text-3xl font-headline font-extrabold text-primary mb-4 tracking-tighter"
+                                data-i18n="home.archive.items.garth.name">GarthHolo</h3>
+                            <p class="text-on-surface-variant leading-relaxed"
+                                data-i18n="home.archive.items.garth.desc">An all-in-one 'idle' style tool, similar to
+                                Antigravity/Codex but highly simplified, for interacting with local LLMs or market APIs.
+                                Features a user-friendly interface. Closed source.</p>
+                        </div>
+                        <div class="mt-8">
+                            <div class="inline-flex items-center gap-2 text-secondary font-bold"
+                                data-i18n="home.archive.items.garth.badge">Status: Testing</div>
+                        </div>
+                    </div>
+
+                    <!-- J-Chess -->
+                    <div
+                        class="md:col-span-6 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between shadow-sm border border-outline-variant/10 group hover:shadow-lg transition-all">
+                        <div>
+                            <div class="flex items-center gap-2 mb-6">
+                                <div class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-primary text-[10px] font-bold rounded uppercase tracking-tighter"
+                                    data-i18n="home.archive.items.jchess.status">Beta</div>
+                                <div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-black/5 text-[10px] font-bold text-primary/40 uppercase tracking-wider"
+                                    data-i18n="shared.source.tbd">License TBD</div>
+                            </div>
+                            <h3 class="text-3xl font-headline font-extrabold text-primary mb-4 tracking-tighter"
+                                data-i18n="home.archive.items.jchess.name">J-Chess</h3>
+                            <p class="text-on-surface-variant leading-relaxed"
+                                data-i18n="home.archive.items.jchess.desc">Chess for beginners with a focus on learning.
+                                Features heatmaps to visualize openings and pressured squares. Slow development due to
+                                dependency on feedback collection from high-performance players; Licensing TBD.</p>
+                        </div>
+                        <div class="mt-8">
+                            <div class="inline-flex items-center gap-2 text-secondary font-bold"
+                                data-i18n="home.archive.items.jchess.badge">Status: Testing</div>
+                        </div>
+                    </div>
+                    <!-- GotchaLang -->
+                    <div
+                        class="md:col-span-6 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between shadow-sm border border-outline-variant/10 group hover:shadow-lg transition-all">
+                        <div>
+                            <div class="flex items-center gap-2 mb-6">
+                                <div class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-primary text-[10px] font-bold rounded uppercase tracking-tighter"
+                                    data-i18n="home.archive.items.gotcha.status">BETA</div>
+                                <div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-black/5 text-[10px] font-bold text-primary/40 uppercase tracking-wider"
+                                    data-i18n="shared.source.closed">Closed Source</div>
+                            </div>
+                            <h3 class="text-3xl font-headline font-extrabold text-primary mb-4 tracking-tighter"
+                                data-i18n="home.archive.items.gotcha.name">GotchaLang</h3>
+                            <p class="text-on-surface-variant leading-relaxed"
+                                data-i18n="home.archive.items.gotcha.desc">A simulated exchange experience: preset or
+                                generated daily situations. People who look and act real, but are simulated using text
+                                and audio generation APIs. Features a user-friendly interface and closed source. Planned
+                                release date: May 2026.</p>
+                        </div>
+                        <div class="mt-8">
+                            <div class="inline-flex items-center gap-2 text-secondary font-bold"
+                                data-i18n="home.archive.items.gotcha.badge">Status: Testing</div>
+                        </div>
+                    </div>
+                    <!-- In Development: Multi-Tool -->
+                    <div
+                        class="md:col-span-12 bg-surface-container-highest rounded-[2rem] p-8 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/50">
+                        <div class="flex items-center gap-6">
+                            <div class="grid grid-cols-2 gap-2 opacity-50">
+                                <span class="material-symbols-outlined text-primary">timer</span>
+                                <span class="material-symbols-outlined text-primary">code</span>
+                                <span class="material-symbols-outlined text-primary">text_fields</span>
+                                <span class="material-symbols-outlined text-primary">build</span>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <h3 class="text-xl font-headline font-bold text-primary"
+                                        data-i18n="home.archive.items.toolkit.name">Work Holistic Toolkit</h3>
+                                    <span
+                                        class="px-2 py-0.5 bg-on-surface-variant/10 text-on-surface-variant text-[9px] font-bold rounded uppercase"
+                                        data-i18n="home.archive.items.toolkit.status">Currently Paused</span>
+                                    <span
+                                        class="flex items-center gap-1 text-[9px] font-bold text-primary/30 uppercase tracking-widest border-l border-primary/10 pl-3 ml-1"
+                                        data-i18n="shared.source.open">Open Source</span>
+                                </div>
+                                <p class="text-on-surface-variant text-sm" data-i18n="home.archive.items.toolkit.desc">
+                                    An all-in-one Chrome extension featuring a timer, metronome, text processing tools,
+                                    and an HTML editor—everything within a single browser container.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs font-bold text-on-surface-variant/40 tracking-widest uppercase"
+                            data-i18n="home.archive.items.toolkit.lab">
+                            Status: Lab Testing
+                            <span class="w-2 h-2 bg-on-surface-variant/20 rounded-full"></span>
+                        </div>
+                    </div>
+                    <div
+                        class="md:col-span-12 bg-surface-container-highest rounded-[2rem] p-8 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/50">
+                        <div class="flex items-center gap-6">
+                            <div class="grid grid-cols-2 gap-2 opacity-50">
+                                <span class="material-symbols-outlined text-primary">music_note</span>
+                                <span class="material-symbols-outlined text-primary">equalizer</span>
+                                <span class="material-symbols-outlined text-primary">play_circle</span>
+                                <span class="material-symbols-outlined text-primary">brush</span>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <h3 class="text-xl font-headline font-bold text-primary"
+                                        data-i18n="home.archive.items.brisa.name">Breeze Visualizer</h3>
+                                    <span
+                                        class="px-2 py-0.5 bg-secondary/10 text-secondary text-[9px] font-bold rounded uppercase"
+                                        data-i18n="home.archive.items.brisa.status">IN DEVELOPMENT</span>
+                                    <span
+                                        class="flex items-center gap-1 text-[9px] font-bold text-secondary/40 uppercase tracking-widest border-l border-secondary/15 pl-3 ml-1"
+                                        data-i18n="shared.source.open">Open Source</span>
+                                </div>
+                                <p class="text-on-surface-variant text-sm" data-i18n="home.archive.items.brisa.desc">A
+                                    music player and visualizer designed for focused listening or creating animations
+                                    for Lofi channels.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs font-bold text-on-surface-variant/40 tracking-widest uppercase"
+                            data-i18n="home.archive.items.brisa.prototyping">
+                            Status: Prototyping
+                            <span class="w-2 h-2 bg-secondary/40 rounded-full animate-pulse"></span>
+                        </div>
+                    </div>
+                    <div
+                        class="md:col-span-12 bg-surface-container-highest rounded-[2rem] p-8 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/50">
+                        <div class="flex items-center gap-6">
+                            <div class="grid grid-cols-2 gap-2 opacity-50">
+                                <span class="material-symbols-outlined text-primary">html</span>
+                                <span class="material-symbols-outlined text-primary">edit</span>
+                                <span class="material-symbols-outlined text-primary">terminal</span>
+                                <span class="material-symbols-outlined text-primary">web</span>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-3 mb-1">
+                                    <h3 class="text-xl font-headline font-bold text-primary"
+                                        data-i18n="home.archive.items.simple_html.name">Simple HTML Editor</h3>
+                                    <span
+                                        class="px-2 py-0.5 bg-on-surface-variant/10 text-on-surface-variant text-[9px] font-bold rounded uppercase"
+                                        data-i18n="home.archive.items.simple_html.status">Development Paused</span>
+                                    <span
+                                        class="flex items-center gap-1 text-[9px] font-bold text-primary/30 uppercase tracking-widest border-l border-primary/10 pl-3 ml-1"
+                                        data-i18n="shared.source.open">Open Source</span>
+                                </div>
+                                <p class="text-on-surface-variant text-sm"
+                                    data-i18n="home.archive.items.simple_html.desc">A simple HTML editor built 100% with
+                                    vibecoding, from scratch; Almost ready, but development is currently paused.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 text-xs font-bold text-on-surface-variant/40 tracking-widest uppercase"
+                            data-i18n="home.archive.items.simple_html.badge">
+                            Status: Almost Ready
+                            <span class="w-2 h-2 bg-on-surface-variant/20 rounded-full"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Support & Donation -->
+        <section class="py-32 px-8 overflow-hidden" id="support">
+            <div class="max-w-4xl mx-auto text-center space-y-10 relative">
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-secondary/5 blur-[120px] -z-10 rounded-full">
+                </div>
+                <span class="material-symbols-outlined text-5xl text-tertiary-fixed-dim"
+                    style="font-variation-settings: &quot;FILL&quot; 1;">volunteer_activism</span>
+                <h2 class="text-5xl md:text-6xl font-headline font-extrabold text-primary tracking-tighter"
+                    data-i18n="home.support.title">Support the <span class="italic font-normal">Independent</span> Flow
+                </h2>
+                <p class="text-xl text-on-surface-variant leading-relaxed" data-i18n="home.support.desc">
+                    Building "forever tools" requires time and focus. Your support ensures these projects remain free of
+                    intrusive trackers and corporate bloat.
+                </p>
+                <div class="mt-8 w-full max-w-2xl mx-auto overflow-hidden">
+                    <iframe id='kofiframe'
+                        src='https://ko-fi.com/besttoolsforever/?hidefeed=true&widget=true&embed=true&preview=true'
+                        style='border:none;width:100%;' height='680' title='besttoolsforever'></iframe>
+                </div>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                    <a href="https://github.com/sponsors/besttoolsforever" target="_blank" rel="noopener noreferrer"
+                        class="px-8 py-4 bg-primary text-white rounded-xl font-bold flex items-center gap-2 hover:translate-y-[-2px] transition-all active:translate-y-0 shadow-lg">
+                        <span class="material-symbols-outlined text-sm"
+                            style="font-variation-settings: 'FILL' 1;">favorite</span>
+                        <span data-i18n="home.support.btn_github">GitHub Sponsors</span>
+                    </a>
+                    <a href="https://www.paypal.com/donate/?hosted_button_id=ZJMREWX5ZEMAC" target="_blank"
+                        rel="noopener noreferrer"
+                        class="px-8 py-4 bg-[#0070ba] text-white rounded-xl font-bold flex items-center gap-2 hover:translate-y-[-2px] transition-all active:translate-y-0 shadow-lg">
+                        <span class="material-symbols-outlined text-sm">payments</span>
+                        <span data-i18n="home.support.btn_paypal">PayPal</span>
+                    </a>
+                    <button id="show-more-support"
+                        class="px-6 py-4 border border-outline-variant/30 text-primary/60 rounded-xl font-bold hover:bg-black/5 transition-all text-sm flex items-center gap-2 group">
+                        <span id="more-support-text" data-i18n="home.support.btn_more">More ways to support</span>
+                        <span
+                            class="material-symbols-outlined text-sm group-hover:translate-y-0.5 transition-transform duration-300"
+                            id="support-toggle-icon">expand_more</span>
+                    </button>
+                </div>
+
+                <!-- Expandable Section -->
+                <div id="more-support-options"
+                    class="hidden mt-12 bg-white rounded-[2rem] p-8 md:p-12 border border-outline-variant/10 shadow-sm max-w-3xl mx-auto text-left animate-in fade-in slide-in-from-top-4 duration-500">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- PIX -->
+                        <div class="space-y-4">
+                            <h3 class="font-headline font-bold text-primary flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">qr_code</span>
+                                <span data-i18n="home.support.label_pix">PIX</span>
+                            </h3>
+                            <div class="bg-surface-container-low rounded-xl p-2 border border-outline-variant/5">
+                                <img src="assets/images/pixqrcode.jpg" alt="PIX QR Code"
+                                    class="w-full aspect-square rounded-lg shadow-sm object-contain mix-blend-multiply">
+                            </div>
+                        </div>
+                        <!-- Crypto -->
+                        <div class="space-y-4">
+                            <h3 class="font-headline font-bold text-primary flex items-center gap-2">
+                                <span class="material-symbols-outlined text-sm">currency_bitcoin</span>
+                                <span data-i18n="home.support.label_crypto">Bitcoin / Lightning</span>
+                            </h3>
+                            <div class="bg-surface-container-low rounded-xl p-2 border border-outline-variant/5">
+                                <img src="assets/images/coinqrcode.jpg" alt="Crypto QR Code"
+                                    class="w-full aspect-square rounded-lg shadow-sm object-contain mix-blend-multiply">
+                            </div>
+                        </div>
+                        <!-- Patreon -->
+                        <div class="flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <h3 class="font-headline font-bold text-primary flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-sm"
+                                        style="font-variation-settings: 'FILL' 1;">stars</span>
+                                    <span data-i18n="home.support.btn_patreon">Patreon</span>
+                                </h3>
+                                <p class="text-sm text-on-surface-variant leading-relaxed opacity-70">Support our
+                                    independent studio with monthly donations and follow our journey.</p>
+                            </div>
+                            <a href="https://patreon.com/besttoolsforever" target="_blank" rel="noopener noreferrer"
+                                class="mt-8 w-full py-4 bg-[#ff424d] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all shadow-md">
+                                <span class="material-symbols-outlined text-sm">open_in_new</span>
+                                <span data-i18n="home.support.btn_patreon">Patreon</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="mt-8 text-sm text-on-surface-variant/60 font-medium" data-i18n="home.support.note">Every bit
+                    of support fuels the next step, thank you! =)</p>
+            </div>
+        </section>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full py-12 px-8 bg-[#f8f9fa]">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto border-t border-[#070d17]/5 pt-12">
+            <div class="space-y-6">
+                <a class="block" href="https://besttoolsforever.github.io/support/">
+                    <img alt="BestToolsForever Brand" class="w-48 md:w-64 h-auto object-contain"
+                        src="assets/images/logo_BestToolsForever_Name.svg">
                 </a>
-                <a class="px-6 py-3 border border-secondary/20 text-secondary rounded-lg font-semibold hover:bg-secondary/5 transition-colors" href="https://besttoolsforever.github.io/bundleweave/" data-i18n="home.archive.items.flagship.btn_view">View Page</a>
+                <p class="text-on-surface-variant text-sm leading-relaxed max-w-xs"
+                    data-i18n="shared.footer.description">
+                    Precision-crafted software for real-world use.
+                </p>
+            </div>
+            <div class="flex flex-col gap-3 text-sm">
+                <a class="text-on-surface-variant hover:text-secondary transition-colors"
+                    href="https://github.com/besttoolsforever" target="_blank"
+                    data-i18n="shared.footer.social.github">GitHub</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors"
+                    href="https://www.linkedin.com/in/luiz-eduardo-9941232bb/" target="_blank"
+                    data-i18n="shared.footer.social.linkedin">LinkedIn</a>
+            </div>
+            <div class="flex flex-col gap-3 text-sm">
+                <a class="text-on-surface-variant hover:text-secondary transition-colors" href="legal.html#privacy"
+                    data-i18n="shared.footer.privacy">Privacy Policy</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors" href="legal.html#eula"
+                    data-i18n="shared.footer.terms">Terms of Service</a>
+                <p class="mt-4 text-on-surface-variant/50 text-[11px] uppercase tracking-tighter">
+                    <span data-i18n="shared.footer.copyright_prefix">©</span>
+                    <span id="copyright-year">2026</span>
+                    <span data-i18n="shared.footer.copyright_suffix">BestToolsForever.</span>
+                </p>
             </div>
         </div>
-        <div class="hidden lg:block relative z-10">
-            <div class="aspect-video bg-surface-container-low rounded-2xl border border-outline-variant/5 flex items-center justify-center overflow-hidden relative group/img">
-                <span class="material-symbols-outlined text-[80px] text-primary/5 group-hover/img:scale-125 transition-transform duration-700">precision_manufacturing</span>
-                <div class="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent"></div>
-            </div>
-        </div>
-    </div>
-    <div class="absolute bottom-[-10%] right-[-5%] w-1/2 h-1/2 bg-gradient-to-br from-secondary/5 to-transparent rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-</div>
-
-<!-- CipherSmith -->
-<div class="md:col-span-4 bg-primary text-on-primary rounded-[2rem] p-10 flex flex-col justify-between shadow-xl">
-    <div>
-        <div class="flex justify-between items-start mb-6">
-            <div class="flex items-center gap-2">
-                <span class="text-[10px] font-bold text-secondary-container uppercase tracking-widest px-2 py-1 border border-secondary-container/30 rounded" data-i18n="home.archive.items.ciphersmith.status">Finished</span>
-                <span class="text-[10px] font-bold text-white/50 uppercase tracking-widest px-2 py-1 bg-white/10 rounded" data-i18n="shared.source.open">Open Source</span>
-            </div>
-            <div class="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center">
-                <span class="material-symbols-outlined text-white">lock_open</span>
-            </div>
-        </div>
-        <h3 class="text-2xl font-headline font-bold mb-3" data-i18n="home.archive.items.ciphersmith.name">CipherSmith</h3>
-        <p class="text-white/70 text-sm leading-relaxed mb-6" data-i18n="home.archive.items.ciphersmith.desc">A secure, dictionary-based password generator for humans.</p>
-    </div>
-    <div class="space-y-3">
-        <a class="w-full py-3 bg-white text-primary rounded-lg font-bold flex items-center justify-center gap-2 hover:bg-white/90 transition-colors" href="https://chromewebstore.google.com/detail/ciphersmith-password-gene/bbccnjfcpepahpfcbppgembfdfgcmdjl" target="_blank" rel="noopener noreferrer">
-            <span class="material-symbols-outlined">extension</span>
-            <span data-i18n="home.archive.items.ciphersmith.btn_chrome">Chrome Store</span>
-        </a>
-        <a class="w-full py-3 bg-white/5 text-white/90 rounded-lg font-semibold flex items-center justify-center gap-2 border border-white/10 hover:bg-white/10 transition-colors" href="https://github.com/besttoolsforever/CipherSmith" target="_blank" rel="noopener noreferrer">
-            <span class="material-symbols-outlined">code</span>
-            <span data-i18n="home.archive.items.ciphersmith.btn_github">GitHub</span>
-        </a>
-    </div>
-</div>
-<!-- Morpheus -->
-<div class="md:col-span-6 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between shadow-sm border border-outline-variant/10 group hover:shadow-lg transition-all">
-    <div>
-        <div class="flex items-center gap-2 mb-6">
-            <div class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-primary text-[10px] font-bold rounded uppercase tracking-tighter" data-i18n="home.archive.items.morpheus.status">Recém Iniciado</div>
-            <div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-black/5 text-[10px] font-bold text-primary/40 uppercase tracking-wider" data-i18n="shared.source.open">Open Source</div>
-        </div>
-        <h3 class="text-3xl font-headline font-extrabold text-primary mb-4 tracking-tighter" data-i18n="home.archive.items.morpheus.name">Morpheus — Multi-Agent Runtime Skin</h3>
-        <p class="text-on-surface-variant leading-relaxed" data-i18n="home.archive.items.morpheus.desc">Modular visual observatory for multi-agent systems. Universal visual layer for agentic runtime environments (OpenClaw, etc). Still in technical feasibility process.</p>
-    </div>
-    <div class="mt-8">
-        <div class="inline-flex items-center gap-2 text-secondary font-bold" data-i18n="home.archive.items.morpheus.badge">Status: Technical Feasibility</div>
-    </div>
-</div>
-
-<!-- GarthHolo -->
-<div class="md:col-span-6 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between shadow-sm border border-outline-variant/10 group hover:shadow-lg transition-all">
-    <div>
-        <div class="flex items-center gap-2 mb-6">
-            <div class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-primary text-[10px] font-bold rounded uppercase tracking-tighter" data-i18n="home.archive.items.garth.status">Beta</div>
-            <div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-black/5 text-[10px] font-bold text-primary/40 uppercase tracking-wider" data-i18n="shared.source.closed">Closed Source</div>
-        </div>
-        <h3 class="text-3xl font-headline font-extrabold text-primary mb-4 tracking-tighter" data-i18n="home.archive.items.garth.name">GarthHolo</h3>
-        <p class="text-on-surface-variant leading-relaxed" data-i18n="home.archive.items.garth.desc">An all-in-one 'idle' style tool, similar to Antigravity/Codex but highly simplified, for interacting with local LLMs or market APIs. Features a user-friendly interface. Closed source.</p>
-    </div>
-    <div class="mt-8">
-        <div class="inline-flex items-center gap-2 text-secondary font-bold" data-i18n="home.archive.items.garth.badge">Status: Testing</div>
-    </div>
-</div>
-
-<!-- J-Chess -->
-<div class="md:col-span-6 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between shadow-sm border border-outline-variant/10 group hover:shadow-lg transition-all">
-    <div>
-        <div class="flex items-center gap-2 mb-6">
-            <div class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-primary text-[10px] font-bold rounded uppercase tracking-tighter" data-i18n="home.archive.items.jchess.status">Beta</div>
-            <div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-black/5 text-[10px] font-bold text-primary/40 uppercase tracking-wider" data-i18n="shared.source.tbd">License TBD</div>
-        </div>
-        <h3 class="text-3xl font-headline font-extrabold text-primary mb-4 tracking-tighter" data-i18n="home.archive.items.jchess.name">J-Chess</h3>
-        <p class="text-on-surface-variant leading-relaxed" data-i18n="home.archive.items.jchess.desc">Chess for beginners with a focus on learning. Features heatmaps to visualize openings and pressured squares. Slow development due to dependency on feedback collection from high-performance players; Licensing TBD.</p>
-    </div>
-    <div class="mt-8">
-        <div class="inline-flex items-center gap-2 text-secondary font-bold" data-i18n="home.archive.items.jchess.badge">Status: Testing</div>
-    </div>
-</div>
-<!-- GotchaLang -->
-<div class="md:col-span-6 bg-surface-container-low rounded-[2rem] p-10 flex flex-col justify-between shadow-sm border border-outline-variant/10 group hover:shadow-lg transition-all">
-    <div>
-        <div class="flex items-center gap-2 mb-6">
-            <div class="inline-block px-3 py-1 bg-tertiary-fixed-dim text-primary text-[10px] font-bold rounded uppercase tracking-tighter" data-i18n="home.archive.items.gotcha.status">BETA</div>
-            <div class="inline-flex items-center gap-1 px-2 py-1 rounded bg-black/5 text-[10px] font-bold text-primary/40 uppercase tracking-wider" data-i18n="shared.source.closed">Closed Source</div>
-        </div>
-        <h3 class="text-3xl font-headline font-extrabold text-primary mb-4 tracking-tighter" data-i18n="home.archive.items.gotcha.name">GotchaLang</h3>
-        <p class="text-on-surface-variant leading-relaxed" data-i18n="home.archive.items.gotcha.desc">A simulated exchange experience: preset or generated daily situations. People who look and act real, but are simulated using text and audio generation APIs. Features a user-friendly interface and closed source. Planned release date: May 2026.</p>
-    </div>
-    <div class="mt-8">
-        <div class="inline-flex items-center gap-2 text-secondary font-bold" data-i18n="home.archive.items.gotcha.badge">Status: Testing</div>
-    </div>
-</div>
-<!-- In Development: Multi-Tool -->
-<div class="md:col-span-12 bg-surface-container-highest rounded-[2rem] p-8 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/50">
-<div class="flex items-center gap-6">
-<div class="grid grid-cols-2 gap-2 opacity-50">
-<span class="material-symbols-outlined text-primary">timer</span>
-<span class="material-symbols-outlined text-primary">code</span>
-<span class="material-symbols-outlined text-primary">text_fields</span>
-<span class="material-symbols-outlined text-primary">build</span>
-</div>
-<div>
-            <div class="flex items-center gap-3 mb-1">
-                <h3 class="text-xl font-headline font-bold text-primary" data-i18n="home.archive.items.toolkit.name">Work Holistic Toolkit</h3>
-                <span class="px-2 py-0.5 bg-on-surface-variant/10 text-on-surface-variant text-[9px] font-bold rounded uppercase" data-i18n="home.archive.items.toolkit.status">Currently Paused</span>
-                <span class="flex items-center gap-1 text-[9px] font-bold text-primary/30 uppercase tracking-widest border-l border-primary/10 pl-3 ml-1" data-i18n="shared.source.open">Open Source</span>
-            </div>
-<p class="text-on-surface-variant text-sm" data-i18n="home.archive.items.toolkit.desc">An all-in-one Chrome extension featuring a timer, metronome, text processing tools, and an HTML editor—everything within a single browser container.</p>
-</div>
-</div>
-<div class="flex items-center gap-4 text-xs font-bold text-on-surface-variant/40 tracking-widest uppercase" data-i18n="home.archive.items.toolkit.lab">
-Status: Lab Testing
-<span class="w-2 h-2 bg-on-surface-variant/20 rounded-full"></span>
-</div>
-</div><div class="md:col-span-12 bg-surface-container-highest rounded-[2rem] p-8 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/50">
-<div class="flex items-center gap-6">
-<div class="grid grid-cols-2 gap-2 opacity-50">
-<span class="material-symbols-outlined text-primary">music_note</span>
-<span class="material-symbols-outlined text-primary">equalizer</span>
-<span class="material-symbols-outlined text-primary">play_circle</span>
-<span class="material-symbols-outlined text-primary">brush</span>
-</div>
-<div>
-            <div class="flex items-center gap-3 mb-1">
-                <h3 class="text-xl font-headline font-bold text-primary" data-i18n="home.archive.items.brisa.name">Breeze Visualizer</h3>
-                <span class="px-2 py-0.5 bg-secondary/10 text-secondary text-[9px] font-bold rounded uppercase" data-i18n="home.archive.items.brisa.status">IN DEVELOPMENT</span>
-                <span class="flex items-center gap-1 text-[9px] font-bold text-secondary/40 uppercase tracking-widest border-l border-secondary/15 pl-3 ml-1" data-i18n="shared.source.open">Open Source</span>
-            </div>
-<p class="text-on-surface-variant text-sm" data-i18n="home.archive.items.brisa.desc">A music player and visualizer designed for focused listening or creating animations for Lofi channels.</p>
-</div>
-</div>
-<div class="flex items-center gap-4 text-xs font-bold text-on-surface-variant/40 tracking-widest uppercase" data-i18n="home.archive.items.brisa.prototyping">
-Status: Prototyping
-<span class="w-2 h-2 bg-secondary/40 rounded-full animate-pulse"></span>
-</div>
-</div>
-<div class="md:col-span-12 bg-surface-container-highest rounded-[2rem] p-8 flex flex-col md:flex-row items-center justify-between gap-8 border border-white/50">
-<div class="flex items-center gap-6">
-<div class="grid grid-cols-2 gap-2 opacity-50">
-<span class="material-symbols-outlined text-primary">html</span>
-<span class="material-symbols-outlined text-primary">edit</span>
-<span class="material-symbols-outlined text-primary">terminal</span>
-<span class="material-symbols-outlined text-primary">web</span>
-</div>
-<div>
-            <div class="flex items-center gap-3 mb-1">
-                <h3 class="text-xl font-headline font-bold text-primary" data-i18n="home.archive.items.simple_html.name">Simple HTML Editor</h3>
-                <span class="px-2 py-0.5 bg-on-surface-variant/10 text-on-surface-variant text-[9px] font-bold rounded uppercase" data-i18n="home.archive.items.simple_html.status">Development Paused</span>
-                <span class="flex items-center gap-1 text-[9px] font-bold text-primary/30 uppercase tracking-widest border-l border-primary/10 pl-3 ml-1" data-i18n="shared.source.open">Open Source</span>
-            </div>
-<p class="text-on-surface-variant text-sm" data-i18n="home.archive.items.simple_html.desc">A simple HTML editor built 100% with vibecoding, from scratch; Almost ready, but development is currently paused.</p>
-</div>
-</div>
-<div class="flex items-center gap-4 text-xs font-bold text-on-surface-variant/40 tracking-widest uppercase" data-i18n="home.archive.items.simple_html.badge">
-Status: Almost Ready
-<span class="w-2 h-2 bg-on-surface-variant/20 rounded-full"></span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Support & Donation -->
-<section class="py-32 px-8 overflow-hidden" id="support">
-<div class="max-w-4xl mx-auto text-center space-y-10 relative">
-<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-secondary/5 blur-[120px] -z-10 rounded-full"></div>
-<span class="material-symbols-outlined text-5xl text-tertiary-fixed-dim" style="font-variation-settings: &quot;FILL&quot; 1;">volunteer_activism</span>
-<h2 class="text-5xl md:text-6xl font-headline font-extrabold text-primary tracking-tighter" data-i18n="home.support.title">Support the <span class="italic font-normal">Independent</span> Flow</h2>
-<p class="text-xl text-on-surface-variant leading-relaxed" data-i18n="home.support.desc">
-Building "forever tools" requires time and focus. Your support ensures these projects remain free of intrusive trackers and corporate bloat.
-</p>
-<div class="mt-8 w-full max-w-2xl mx-auto overflow-hidden">
-<iframe id='kofiframe' src='https://ko-fi.com/besttoolsforever/?hidefeed=true&widget=true&embed=true&preview=true' style='border:none;width:100%;' height='680' title='besttoolsforever'></iframe>
-</div>
-<div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
-<a href="https://github.com/sponsors/besttoolsforever" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-primary text-white rounded-xl font-bold flex items-center gap-2 hover:translate-y-[-2px] transition-all active:translate-y-0 shadow-lg">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">favorite</span>
-<span data-i18n="home.support.btn_github">GitHub Sponsors</span>
-</a>
-<a href="https://www.paypal.com/donate/?hosted_button_id=ZJMREWX5ZEMAC" target="_blank" rel="noopener noreferrer" class="px-8 py-4 bg-[#0070ba] text-white rounded-xl font-bold flex items-center gap-2 hover:translate-y-[-2px] transition-all active:translate-y-0 shadow-lg">
-<span class="material-symbols-outlined text-sm">payments</span>
-<span data-i18n="home.support.btn_paypal">PayPal</span>
-</a>
-<button id="show-more-support" class="px-6 py-4 border border-outline-variant/30 text-primary/60 rounded-xl font-bold hover:bg-black/5 transition-all text-sm flex items-center gap-2 group">
-<span id="more-support-text" data-i18n="home.support.btn_more">More ways to support</span>
-<span class="material-symbols-outlined text-sm group-hover:translate-y-0.5 transition-transform duration-300" id="support-toggle-icon">expand_more</span>
-</button>
-</div>
-
-<!-- Expandable Section -->
-<div id="more-support-options" class="hidden mt-12 bg-white rounded-[2rem] p-8 md:p-12 border border-outline-variant/10 shadow-sm max-w-3xl mx-auto text-left animate-in fade-in slide-in-from-top-4 duration-500">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- PIX -->
-<div class="space-y-4">
-<h3 class="font-headline font-bold text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">qr_code</span>
-<span data-i18n="home.support.label_pix">PIX</span>
-</h3>
-<div class="bg-surface-container-low rounded-xl p-2 border border-outline-variant/5">
-<img src="assets/images/pixqrcode.jpg" alt="PIX QR Code" class="w-full aspect-square rounded-lg shadow-sm object-contain mix-blend-multiply">
-</div>
-</div>
-<!-- Crypto -->
-<div class="space-y-4">
-<h3 class="font-headline font-bold text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-sm">currency_bitcoin</span>
-<span data-i18n="home.support.label_crypto">Bitcoin / Lightning</span>
-</h3>
-<div class="bg-surface-container-low rounded-xl p-2 border border-outline-variant/5">
-<img src="assets/images/coinqrcode.jpg" alt="Crypto QR Code" class="w-full aspect-square rounded-lg shadow-sm object-contain mix-blend-multiply">
-</div>
-</div>
-<!-- Patreon -->
-<div class="flex flex-col justify-between">
-<div class="space-y-4">
-<h3 class="font-headline font-bold text-primary flex items-center gap-2">
-<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">stars</span>
-<span data-i18n="home.support.btn_patreon">Patreon</span>
-</h3>
-<p class="text-sm text-on-surface-variant leading-relaxed opacity-70">Support our independent studio with monthly donations and follow our journey.</p>
-</div>
-<a href="https://patreon.com/besttoolsforever" target="_blank" rel="noopener noreferrer" class="mt-8 w-full py-4 bg-[#ff424d] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all shadow-md">
-<span class="material-symbols-outlined text-sm">open_in_new</span>
-<span data-i18n="home.support.btn_patreon">Patreon</span>
-</a>
-</div>
-</div>
-</div>
-
-<p class="mt-8 text-sm text-on-surface-variant/60 font-medium" data-i18n="home.support.note">Every bit of support fuels the next step, thank you! =)</p>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="w-full py-12 px-8 bg-[#f8f9fa]">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto border-t border-[#070d17]/5 pt-12">
-<div class="space-y-6">
-<a class="block" href="https://besttoolsforever.github.io/support/">
-<img alt="BestToolsForever Brand" class="w-48 md:w-64 h-auto object-contain" src="assets/images/logo_BestToolsForever_Name.svg">
-</a>
-<p class="text-on-surface-variant text-sm leading-relaxed max-w-xs" data-i18n="shared.footer.description">
-Precision-crafted software for real-world use.
-</p>
-</div>
-<div class="flex flex-col gap-3 text-sm">
-<a class="text-on-surface-variant hover:text-secondary transition-colors" href="https://github.com/besttoolsforever" target="_blank" data-i18n="shared.footer.social.github">GitHub</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors" href="https://www.linkedin.com/in/luiz-eduardo-9941232bb/" target="_blank" data-i18n="shared.footer.social.linkedin">LinkedIn</a>
-</div>
-<div class="flex flex-col gap-3 text-sm">
-<a class="text-on-surface-variant hover:text-secondary transition-colors" href="legal.html#privacy" data-i18n="shared.footer.privacy">Privacy Policy</a>
-<a class="text-on-surface-variant hover:text-secondary transition-colors" href="legal.html#eula" data-i18n="shared.footer.terms">Terms of Service</a>
-<p class="mt-4 text-on-surface-variant/50 text-[11px] uppercase tracking-tighter">
-<span data-i18n="shared.footer.copyright_prefix">©</span>
-<span id="copyright-year">2026</span>
-<span data-i18n="shared.footer.copyright_suffix">BestToolsForever.</span>
-</p>
-</div>
-</div>
-</footer>
-<script src="translations.js"></script>
-<script>
-    const langSelector = document.getElementById('lang-selector');
-    const langDropdown = document.getElementById('lang-dropdown');
-    langSelector.addEventListener('click', (e) => {
-        e.stopPropagation();
-        langDropdown.classList.toggle('hidden');
-    });
-    document.addEventListener('click', () => langDropdown.classList.add('hidden'));
-
-    // Support toggle
-    const showMoreBtn = document.getElementById('show-more-support');
-    const moreOptions = document.getElementById('more-support-options');
-    const toggleIcon = document.getElementById('support-toggle-icon');
-    if (showMoreBtn && moreOptions) {
-        showMoreBtn.addEventListener('click', () => {
-            moreOptions.classList.toggle('hidden');
-            toggleIcon.textContent = moreOptions.classList.contains('hidden') ? 'expand_more' : 'expand_less';
+    </footer>
+    <script src="translations.js"></script>
+    <script>
+        const langSelector = document.getElementById('lang-selector');
+        const langDropdown = document.getElementById('lang-dropdown');
+        langSelector.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('hidden');
         });
-    }
-</script>
-</body></html>
+        document.addEventListener('click', () => langDropdown.classList.add('hidden'));
+
+        // Support toggle
+        const showMoreBtn = document.getElementById('show-more-support');
+        const moreOptions = document.getElementById('more-support-options');
+        const toggleIcon = document.getElementById('support-toggle-icon');
+        if (showMoreBtn && moreOptions) {
+            showMoreBtn.addEventListener('click', () => {
+                moreOptions.classList.toggle('hidden');
+                toggleIcon.textContent = moreOptions.classList.contains('hidden') ? 'expand_more' : 'expand_less';
+            });
+        }
+    </script>
+</body>
+
+</html>
