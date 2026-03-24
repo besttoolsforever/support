@@ -80,7 +80,7 @@ window.translations.en = {
                     lab: "Status: Lab Testing"
                 },
                 brisa: {
-                    name: "Brisa Visualizer",
+                    name: "Breeze Visualizer",
                     status: "IN DEVELOPMENT",
                     desc: "A music player and visualizer designed for focused listening or creating animations for Lofi channels.",
                     prototyping: "Status: Prototyping"
