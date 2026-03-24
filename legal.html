@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title data-i18n="legal.title">Legal Information | BestToolsForever</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary-fixed": "#dde2f2",
+                        "error-container": "#ffdad6",
+                        "surface-container": "#edeeef",
+                        "inverse-surface": "#2e3132",
+                        "primary": "#070d17",
+                        "inverse-primary": "#c1c6d5",
+                        "on-tertiary-fixed-variant": "#5c4300",
+                        "surface-container-low": "#f3f4f5",
+                        "on-primary-container": "#848a98",
+                        "on-tertiary-container": "#af8300",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#e1e3e4",
+                        "tertiary-container": "#2e2000",
+                        "tertiary-fixed": "#ffdfa0",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface": "#f8f9fa",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#6faeff",
+                        "background": "#f8f9fa",
+                        "surface-tint": "#595e6b",
+                        "on-secondary-fixed-variant": "#004883",
+                        "secondary": "#0360ab",
+                        "on-tertiary-fixed": "#261a00",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-container": "#004077",
+                        "tertiary": "#130b00",
+                        "on-background": "#191c1d",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#c1c6d5",
+                        "on-primary-fixed-variant": "#414753",
+                        "on-primary-fixed": "#161c26",
+                        "on-secondary-fixed": "#001c39",
+                        "surface-dim": "#d9dadb",
+                        "secondary-fixed-dim": "#a4c9ff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-surface": "#191c1d",
+                        "secondary-fixed": "#d4e3ff",
+                        "outline-variant": "#c6c6cc",
+                        "tertiary-fixed-dim": "#f8bd2a",
+                        "on-primary": "#ffffff",
+                        "primary-container": "#1d232e",
+                        "on-surface-variant": "#45474c",
+                        "on-tertiary": "#ffffff",
+                        "outline": "#76777c"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        pre { 
+            white-space: pre-wrap; 
+            word-wrap: break-word; 
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #45474c;
+        }
+        main { scroll-margin-top: 100px; }
+        .legal-card {
+            transition: transform 0.3s ease, shadow 0.3s ease;
+        }
+        .legal-card:hover {
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary-fixed-dim selection:text-on-tertiary-fixed">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-xl shadow-[0px_12px_32px_rgba(7,13,23,0.06)]">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto font-['Manrope'] tracking-tight">
+            <div class="flex items-center gap-8">
+                <a class="text-xl font-bold text-[#070d17] flex items-center gap-2" href="index.html">
+                    <img alt="BestToolsForever Logo" class="h-8 w-auto" src="assets/images/logo_BestToolsForever.svg">
+                </a>
+                <div class="hidden md:flex gap-6 items-center">
+                    <a class="text-[#1d232e]/70 hover:text-secondary transition-colors duration-300 font-semibold" href="index.html" data-i18n="shared.nav.home">Home</a>
+                    <a class="text-[#1d232e]/70 hover:text-secondary transition-colors duration-300 font-semibold" href="index.html#products" data-i18n="shared.nav.products">Projects</a>
+                    <a class="text-[#1d232e]/70 hover:text-secondary transition-colors duration-300 font-semibold" href="index.html#support" data-i18n="shared.nav.support">Support Us</a>
+                    <a class="text-secondary border-b-2 border-secondary pb-1 font-semibold" href="legal.html" data-i18n="shared.nav.legal">Legal</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4 relative">
+                <button id="lang-selector" class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-variant transition-colors text-xs font-semibold tracking-wider border border-outline-variant/15">
+                    <span class="material-symbols-outlined text-sm">language</span>
+                    <span id="current-lang">EN-US</span>
+                    <span class="material-symbols-outlined text-xs">expand_more</span>
+                </button>
+                <div id="lang-dropdown" class="absolute top-full right-0 mt-3 w-64 md:w-52 max-h-[70vh] md:max-h-[420px] overflow-y-auto bg-white rounded-2xl shadow-[0px_24px_64px_-12px_rgba(7,13,23,0.18)] border border-outline-variant/10 hidden flex-col py-2 z-[100]">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="pt-32 pb-24 px-8 max-w-7xl mx-auto">
+        <header class="mb-16 text-center">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-primary tracking-tighter leading-tight mb-4" data-i18n="legal.hero.title">Legal & Licensing</h1>
+            <p class="text-xl text-on-surface-variant leading-relaxed max-w-2xl mx-auto" data-i18n="legal.hero.subtitle">General terms and project-specific licensing information.</p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <section id="eula" class="legal-card bg-white p-10 rounded-[2.5rem] border border-outline-variant/10 shadow-sm hover:shadow-xl scroll-mt-32">
+                <div class="w-12 h-12 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-2xl">gavel</span>
+                </div>
+                <h2 class="text-2xl font-bold text-primary mb-4" data-i18n="legal.eula.title">Project Licensing</h2>
+                <pre data-i18n="legal.eula.content" class="preserve-whitespace"></pre>
+            </section>
+
+            <section id="privacy" class="legal-card bg-white p-10 rounded-[2.5rem] border border-outline-variant/10 shadow-sm hover:shadow-xl scroll-mt-32">
+                <div class="w-12 h-12 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-2xl">shield</span>
+                </div>
+                <h2 class="text-2xl font-bold text-primary mb-4" data-i18n="legal.privacy.title">Data Privacy</h2>
+                <pre data-i18n="legal.privacy.content" class="preserve-whitespace"></pre>
+            </section>
+        </div>
+
+        <section id="ack" class="legal-card bg-white p-10 mt-8 rounded-[2.5rem] border border-outline-variant/10 shadow-sm hover:shadow-xl scroll-mt-32">
+            <div class="w-12 h-12 bg-secondary/5 text-secondary rounded-xl flex items-center justify-center mb-6">
+                <span class="material-symbols-outlined text-2xl">inventory_2</span>
+            </div>
+            <h2 class="text-2xl font-bold text-primary mb-4" data-i18n="legal.ack.title">Third-Party Notices</h2>
+            <pre data-i18n="legal.ack.content" class="preserve-whitespace"></pre>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-outline-variant/10 w-full py-12 px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto pt-12">
+            <div class="space-y-6">
+                <a href="index.html" class="block">
+                    <img alt="BestToolsForever Logo" class="w-48 md:w-64 h-auto object-contain" src="assets/images/logo_BestToolsForever_Name.svg">
+                </a>
+                <p class="text-on-surface-variant text-sm leading-relaxed max-w-xs" data-i18n="shared.footer.description">Precision-crafted software for real-world use.</p>
+            </div>
+            <div class="flex flex-col gap-3 text-sm">
+                <a class="text-on-surface-variant hover:text-secondary transition-colors" href="https://github.com/besttoolsforever" target="_blank" data-i18n="shared.footer.social.github">GitHub</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors" href="https://www.linkedin.com/in/luiz-eduardo-9941232bb/" target="_blank" data-i18n="shared.footer.social.linkedin">LinkedIn</a>
+            </div>
+            <div class="flex flex-col gap-3 text-sm">
+                <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#privacy" data-i18n="shared.footer.privacy">Privacy Policy</a>
+                <a class="text-on-surface-variant hover:text-secondary transition-colors" href="#eula" data-i18n="shared.footer.terms">Terms of Service</a>
+                <p class="mt-4 text-on-surface-variant/50 text-[11px] uppercase tracking-tighter">
+                    <span data-i18n="shared.footer.copyright_prefix">©</span>
+                    <span id="copyright-year">2026</span>
+                    <span data-i18n="shared.footer.copyright_suffix">BestToolsForever.</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="translations.js"></script>
+    <script>
+        const langSelector = document.getElementById('lang-selector');
+        const langDropdown = document.getElementById('lang-dropdown');
+        langSelector.addEventListener('click', (e) => {
+            e.stopPropagation();
+            langDropdown.classList.toggle('hidden');
+        });
+        document.addEventListener('click', () => langDropdown.classList.add('hidden'));
+    </script>
+</body>
+</html>
