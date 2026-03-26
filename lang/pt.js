@@ -67,7 +67,7 @@ window.translations.pt = {
                     btn_view: "Ver Página"
                 },
                 ciphersmith: {
-                    status: "Finalizado",
+                    status: "Lançado",
                     name: "CipherSmith",
                     desc: "O CipherSmith é um gerador de senhas totalmente local com um ícone de assistente, e além dos recursos padrão de um gerador de senhas típico, permite aos usuários criar senhas usando o dicionário dwyl List Of English Words (um arquivo de texto contendo mais de 466 mil palavras em inglês). Isso possibilita combinações de letras maiúsculas e minúsculas, caracteres especiais e números, resultando em senhas fáceis de digitar manualmente, mantendo um nível de entropia ideal.",
                     btn_chrome: "Chrome Store",

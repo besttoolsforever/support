@@ -67,7 +67,7 @@ window.translations.en = {
                     btn_view: "View Page"
                 },
                 ciphersmith: {
-                    status: "Finished",
+                    status: "Launched",
                     name: "CipherSmith",
                     desc: "CipherSmith is a fully local password generator with an assistant icon, and beyond the standard features of a typical password generator, it allows users to create passwords using a dictionary provided by the dwyl List Of English Words (a text file containing over 466k English words). This enables combinations of uppercase and lowercase letters, special characters, and numbers, resulting in passwords that are easy to type manually, while maintaining an optimal level of entropy.",
                     btn_chrome: "Chrome Store",
