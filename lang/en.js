@@ -3,7 +3,7 @@ window.translations.en = {
     shared: {
         nav: {
             home: "Home",
-            products: "Projects",
+            projects: "Projects",
             support: "Support Us",
             legal: "Legal"
         },
@@ -69,7 +69,7 @@ window.translations.en = {
                 ciphersmith: {
                     status: "Finished",
                     name: "CipherSmith",
-                    desc: "CipherSmith is a fully local password generator with an assistant icon, and beyond the standard features of a typical password generator, it allows users to create passwords using a 10,000-word dictionary. This enables combinations of uppercase and lowercase letters, special characters, and numbers, resulting in passwords that are easy to type manually, while maintaining an optimal level of entropy.",
+                    desc: "CipherSmith is a fully local password generator with an assistant icon, and beyond the standard features of a typical password generator, it allows users to create passwords using a dictionary provided by the dwyl List Of English Words (a text file containing over 466k English words). This enables combinations of uppercase and lowercase letters, special characters, and numbers, resulting in passwords that are easy to type manually, while maintaining an optimal level of entropy.",
                     btn_chrome: "Chrome Store",
                     btn_github: "GitHub"
                 },
@@ -128,6 +128,7 @@ window.translations.en = {
             btn_paypal: "PayPal",
             btn_github: "GitHub Sponsors",
             btn_patreon: "Patreon",
+            patreon_desc: "Support our independent studio with monthly donations and follow our journey.",
             btn_more: "More ways to support",
             label_pix: "PIX",
             label_crypto: "Bitcoin / Lightning",

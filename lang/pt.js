@@ -3,7 +3,7 @@ window.translations.pt = {
     shared: {
         nav: {
             home: "Início",
-            products: "Projetos",
+            projects: "Projetos",
             support: "Apoie-nos",
             legal: "Legal"
         },
@@ -69,7 +69,7 @@ window.translations.pt = {
                 ciphersmith: {
                     status: "Finalizado",
                     name: "CipherSmith",
-                    desc: "O CipherSmith é um gerador de senhas totalmente local com um ícone de assistente, e além dos recursos padrão de um gerador de senhas típico, permite aos usuários criar senhas usando um dicionário de 10.000 palavras. Isso possibilita combinações de letras maiúsculas e minúsculas, caracteres especiais e números, resultando em senhas fáceis de digitar manualmente, mantendo um nível de entropia ideal.",
+                    desc: "O CipherSmith é um gerador de senhas totalmente local com um ícone de assistente, e além dos recursos padrão de um gerador de senhas típico, permite aos usuários criar senhas usando o dicionário dwyl List Of English Words (um arquivo de texto contendo mais de 466 mil palavras em inglês). Isso possibilita combinações de letras maiúsculas e minúsculas, caracteres especiais e números, resultando em senhas fáceis de digitar manualmente, mantendo um nível de entropia ideal.",
                     btn_chrome: "Chrome Store",
                     btn_github: "GitHub"
                 },
@@ -128,6 +128,7 @@ window.translations.pt = {
             btn_paypal: "PayPal",
             btn_github: "GitHub Sponsors",
             btn_patreon: "Patreon",
+            patreon_desc: "Apoie nosso estúdio independente com doações mensais e acompanhe nossa jornada.",
             btn_more: "Ver mais formas",
             label_pix: "PIX",
             label_crypto: "Bitcoin / Lightning",
