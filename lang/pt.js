@@ -117,6 +117,10 @@ window.translations.pt = {
                 }
             }
         },
+        active: {
+            title: "Desenvolvimento Ativo",
+            subtitle: "Trabalho contínuo em projetos em evolução."
+        },
         support: {
             title: 'Apoie o Fluxo <span class="italic font-normal">Independente</span>',
             desc: "Construir \"ferramentas eternas\" exige tempo e foco. Seu apoio garante que esses projetos permaneçam livres de rastreadores intrusivos e excessos corporativos.",

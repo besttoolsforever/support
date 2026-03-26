@@ -117,6 +117,10 @@ window.translations.en = {
                 }
             }
         },
+        active: {
+            title: "Active Development",
+            subtitle: "Ongoing work across evolving projects."
+        },
         support: {
             title: 'Support the <span class="italic font-normal">Independent</span> Flow',
             desc: 'Building "forever tools" requires time and focus. Your support ensures these projects remain free of intrusive trackers and corporate bloat.',
