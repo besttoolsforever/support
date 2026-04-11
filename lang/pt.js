@@ -61,7 +61,7 @@ window.translations.pt = {
             items: {
                 flagship: {
                     badge: "Projeto Principal",
-                    name: "BundleWeave PRO",
+                    name: "CodeFlatten PRO",
                     desc: "O utilitário definitivo do Windows para desenvolvedores. Organize, conecte e exporte projetos complexos de forma eficiente para ingestão em contexto de IA.",
                     btn_windows: "Windows v1.0",
                     btn_view: "Ver Página"
@@ -74,7 +74,7 @@ window.translations.pt = {
                     btn_github: "GitHub"
                 },
                 toolkit: {
-                    name: "Work Holistic Toolkit",
+                    name: "Lumo Toolkit",
                     status: "Atualmente Pausado",
                     desc: "Uma extensão do Chrome \"tudo-em-um\" contendo um timer, metrônomo, ferramentas de processamento de texto e um editor de HTML — tudo dentro de um único container no navegador.",
                     lab: "Status: Teste de Laboratório"
@@ -93,7 +93,7 @@ window.translations.pt = {
                 },
                 garth: {
                     status: "BETA",
-                    name: "GarthHolo",
+                    name: "GartMOD",
                     desc: "Uma Idle faz tudo, estilo Antigravity/Codex porem bem simplificado, para interação com LLMs locais ou APIs de mercado. Possui interface amigável e código fechado.",
                     badge: "Status: Em Testes"
                 },

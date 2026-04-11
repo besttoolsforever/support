@@ -61,7 +61,7 @@ window.translations.en = {
             items: {
                 flagship: {
                     badge: "Flagship Project",
-                    name: "BundleWeave PRO",
+                    name: "CodeFlatten PRO",
                     desc: "The definitive Windows utility for developers. Efficiently organize, weave, and export complex projects for AI context ingestion.",
                     btn_windows: "Windows v1.0",
                     btn_view: "View Page"
@@ -74,7 +74,7 @@ window.translations.en = {
                     btn_github: "GitHub"
                 },
                 toolkit: {
-                    name: "Work Holistic Toolkit",
+                    name: "Lumo Toolkit",
                     status: "Currently Paused",
                     desc: "An all-in-one Chrome extension featuring a timer, metronome, text processing tools, and an HTML editor—everything within a single browser container.",
                     lab: "Status: Lab Testing"
@@ -93,7 +93,7 @@ window.translations.en = {
                 },
                 garth: {
                     status: "BETA",
-                    name: "GarthHolo",
+                    name: "GartMOD",
                     desc: "An all-in-one 'idle' style tool, similar to Antigravity/Codex but highly simplified, for interacting with local LLMs or market APIs. Features a user-friendly interface. Closed source.",
                     badge: "Status: Testing"
                 },
