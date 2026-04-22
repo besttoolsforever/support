@@ -8,7 +8,7 @@ window.translations.en = {
             legal: "Legal"
         },
         footer: {
-            description: "Precision-crafted software for real-world use.",
+            description: "Precision-crafted software for thoughtful use.",
             social: {
                 github: "GitHub",
                 linkedin: "LinkedIn"
@@ -63,7 +63,7 @@ window.translations.en = {
                     badge: "Flagship Project",
                     name: "CodeFlatten PRO",
                     desc: "The definitive Windows utility for developers. Efficiently organize, weave, and export complex projects for AI context ingestion.",
-                    btn_windows: "Windows v1.0",
+                    btn_windows: "Windows v1.2",
                     btn_view: "View Page"
                 },
                 ciphersmith: {
@@ -75,13 +75,13 @@ window.translations.en = {
                 },
                 toolkit: {
                     name: "Lumo Toolkit",
-                    status: "Currently Paused",
+                    status: "Launching soon.",
                     desc: "An all-in-one Chrome extension featuring a timer, metronome, text processing tools, and an HTML editor—everything within a single browser container.",
                     lab: "Status: Lab Testing"
                 },
                 brisa: {
                     name: "Breeze Visualizer",
-                    status: "IN DEVELOPMENT",
+                    status: "Launching soon.",
                     desc: "A music player and visualizer designed for focused listening or creating animations for Lofi channels.",
                     prototyping: "Status: Prototyping"
                 },
@@ -106,7 +106,7 @@ window.translations.en = {
                 simple_html: {
                     name: "Simple HTML Editor",
                     status: "Development Paused",
-                    desc: "A simple HTML editor built 100% with vibecoding, from scratch; Almost ready, but development is currently paused.",
+                    desc: "A simple HTML editor built from scratch. Launching soon.",
                     badge: "Status: Almost Ready"
                 },
                 gotcha: {

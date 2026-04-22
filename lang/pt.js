@@ -8,7 +8,7 @@ window.translations.pt = {
             legal: "Legal"
         },
         footer: {
-            description: "Software de precisão para uso no mundo real.",
+            description: "Software feito com cuidado, para uso diário.",
             social: {
                 github: "GitHub",
                 linkedin: "LinkedIn"
@@ -63,7 +63,7 @@ window.translations.pt = {
                     badge: "Projeto Principal",
                     name: "CodeFlatten PRO",
                     desc: "O utilitário definitivo do Windows para desenvolvedores. Organize, conecte e exporte projetos complexos de forma eficiente para ingestão em contexto de IA.",
-                    btn_windows: "Windows v1.0",
+                    btn_windows: "Windows v1.2",
                     btn_view: "Ver Página"
                 },
                 ciphersmith: {
@@ -75,15 +75,15 @@ window.translations.pt = {
                 },
                 toolkit: {
                     name: "Lumo Toolkit",
-                    status: "Atualmente Pausado",
+                    status: "Em breve.",
                     desc: "Uma extensão do Chrome \"tudo-em-um\" contendo um timer, metrônomo, ferramentas de processamento de texto e um editor de HTML — tudo dentro de um único container no navegador.",
                     lab: "Status: Teste de Laboratório"
                 },
                 brisa: {
                     name: "Breeze Visualizer",
-                    status: "EM DESENVOLVIMENTO",
+                    status: "Em breve.",
                     desc: "Um player de música e visualizer projetado para escuta focada ou criação de animações para canais de Lofi.",
-                    prototyping: "Status: Prototyping"
+                    prototyping: "Status: Prototipagem"
                 },
                 morpheus: {
                     status: "RECÉM INICIADO",
@@ -94,25 +94,25 @@ window.translations.pt = {
                 garth: {
                     status: "BETA",
                     name: "GartMOD",
-                    desc: "Uma Idle faz tudo, estilo Antigravity/Codex porem bem simplificado, para interação com LLMs locais ou APIs de mercado. Possui interface amigável e código fechado.",
+                    desc: "Um 'idle' faz-tudo, estilo Antigravity/Codex, porém bem simplificado, para interação com LLMs locais ou APIs de mercado. Possui interface amigável e código fechado.",
                     badge: "Status: Em Testes"
                 },
                 jchess: {
                     status: "BETA",
                     name: "J-Chess",
-                    desc: "Xadrez para iniciantes com foco em aprendizado. Apresenta mapas de calor para visualizar aberturas e casas pressionadas. desenvolvimento lento por depender da coleta de feedback de jogadores de alta performace;\nLicenciamento a definir.",
+                    desc: "Xadrez para iniciantes com foco em aprendizado. Apresenta mapas de calor para visualizar aberturas e casas pressionadas. Desenvolvimento lento por depender da coleta de feedback de jogadores de alta performance;\nLicenciamento a definir.",
                     badge: "Status: Em Testes"
                 },
                 simple_html: {
                     name: "Simple HTML Editor",
                     status: "Desenvolvimento Pausado",
-                    desc: "Um editor HTML simples feito 100% com vibecoding, do zero; Quase pronto, mas com desenvolvimento pausado no momento.",
+                    desc: "Um editor HTML simples construído do zero. Lançamento em breve.",
                     badge: "Status: Quase Pronto"
                 },
                 gotcha: {
                     name: "GotchaLang",
                     status: "EM TESTES",
-                    desc: "Uma experiência de intercâmbio simulada: situações cotidianas previas ou geradas, pessoas que parecem reais, atuam como reais, mas são simuladas, usando APIs de geração textual e audio. Possui interface amigável e código fechado. Data de lançamento previsto: maio de 2026.",
+                    desc: "Uma experiência de intercâmbio simulada: situações cotidianas prévias ou geradas, pessoas que parecem e atuam como reais, mas são simuladas usando APIs de geração textual e de áudio. Possui interface amigável e código fechado. Data de lançamento prevista: maio de 2026.",
                     badge: "Status: Em Testes"
                 }
             }
